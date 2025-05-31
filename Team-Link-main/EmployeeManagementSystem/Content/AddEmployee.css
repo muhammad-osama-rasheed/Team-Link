@@ -1,0 +1,171 @@
+﻿/*h4.heading {
+    font-family: "Quicksand", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 18px;
+    color: #232B5D;
+    font-weight: 600;
+    margin: 0;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+
+.custom-form-group {
+    position: relative;
+    margin-top: 20px;
+}
+
+.custom-label {
+    position: absolute;
+    top: -11px;
+    left: 10px;
+    background-color: #fff;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 13px;
+    color: #666666;
+    font-weight: 500;
+    font-family: "Quicksand", Arial, sans-serif;
+    transition: all 0.5s;
+}
+
+.custom-input {
+    width: 100%;
+    border: none;
+    padding: 10px;
+    border-radius: 2px;
+    border: 0.4px solid #ccc;
+    font-size: 14px;
+    font-family: 'Quicksand', sans-serif;
+    transition: all 0.5s;
+}
+
+    .custom-input:focus {
+        outline: none;
+        border: 0.4px solid transparent;
+        box-shadow: 0 0 4px rgba(35, 43, 93, 0.7);
+    }
+
+.custom-form-group:focus-within .custom-label {
+    color: #232B5D;
+}
+
+.custom-input::placeholder {
+    color: #888;
+    font-size: 11px;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.custom-error {
+    color: red;
+    font-size: 11px;
+    margin-top: 5px;
+    font-family: "Quicksand", sans-serif;
+    margin-left: 1px;
+}
+
+.add-emp-btn {
+    padding: 8px 20px;
+    background-color: #232B5D;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    border: none;
+    font-weight: 500;
+    text-align: center;
+    font-size: 12px;
+    font-family: 'Quicksand', sans-serif;
+    text-transform:  uppercase;
+    letter-spacing: 2px;
+}
+
+    .add-emp-btn:hover {
+        opacity: 0.9;
+    }
+*/
+
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #f7f9fc;
+    padding: 40px 0;
+}
+
+.card {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px 40px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    background: #ffffff;
+}
+
+    .card h5 {
+        font-weight: 600;
+        color: #232B5D;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+label {
+    font-weight: 600;
+    color: #444;
+    font-size: 14px;
+}
+
+input.form-control {
+    border-radius: 6px;
+    border: 1.5px solid #ddd;
+    transition: border-color 0.3s ease;
+    padding: 10px 14px;
+    font-size: 14px;
+}
+
+    input.form-control:focus {
+        border-color: #232B5D;
+        box-shadow: 0 0 8px rgba(35, 43, 93, 0.3);
+    }
+
+.text-danger {
+    font-size: 12px;
+    margin-top: 3px;
+    font-weight: 500;
+}
+
+.btn-submit {
+    background-color: #232B5D;
+    color: white;
+    font-weight: 600;
+    padding: 5px 20px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    border: none;
+    transition: background-color 0.3s ease;
+    font-size: 13px;
+}
+
+    .btn-submit:hover {
+       opacity: 0.9;
+    }
+
+.back-link {
+    display: block;
+    text-align: center;
+    margin-top: 25px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #232B5D;
+    text-decoration: none;
+}
+
+    .back-link:hover {
+        text-decoration: underline;
+    }
+

@@ -1,0 +1,200 @@
+﻿@model IEnumerable<EmployeeManagementSystem.Models.Employee>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@Html.Raw(TempData["LoginSuccess"]);
+@Html.Raw(TempData["DeleteEmpMessage"]);
+
+
+
+<link href="~/Content/Home.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+
+
+<div class="container-fluid mt-4 position-relative">
+    <div class="row">
+        <div class="col-lg-3 col-md-4 col-6">
+            <div class="card-container">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="d-flex flex-column align-items-start">
+                        <span class="count">@Model.Count()</span>
+                        <span class="title">Total Employees</span>
+                    </div>
+                    <i class="fas fa-users icon"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-6">
+            <div class="card-container">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="d-flex flex-column align-items-start">
+                        <span class="count">10</span>
+                        <span class="title">Departments</span>
+                    </div>
+                    <i class="fas fa-building icon"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-6">
+            <div class="card-container">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="d-flex flex-column align-items-start">
+                        <span class="count">04</span>
+                        <span class="title">Applications</span>
+                    </div>
+                    <i class="fas fa-file-alt icon"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-6">
+            <div class="card-container">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="d-flex flex-column align-items-start">
+                        <span class="count">10</span>
+                        <span class="title">Total Salary</span>
+                    </div>
+                    <i class="fas fa-sack-dollar icon"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row d-flex justify-content-end mt-2">
+        <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+            <div class="add-emp-btn" onclick="location.href='@Url.Action("AddEmployee", "Home")'">
+                <span class="btn-text">Add Empolyee</span>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="table-container">
+
+        <table class="table-main">
+            <thead>
+                <tr>
+                    <th class="table-heading">
+                        @Html.DisplayNameFor(model => model.Name)
+                    </th>
+                    <th class="table-heading">
+                        @Html.DisplayNameFor(model => model.Email)
+                    </th>
+                    <th class="table-heading">
+                        @Html.DisplayNameFor(model => model.Gender)
+                    </th>
+                    <th class="table-heading">
+                        @Html.DisplayNameFor(model => model.Age)
+                    </th>
+                    <th class="table-heading">
+                        @Html.DisplayNameFor(model => model.Address)
+                    </th>
+                    <th class="table-heading">
+                        @Html.DisplayNameFor(model => model.Phone)
+                    </th>
+                    <th class="table-heading">
+                        @Html.DisplayNameFor(model => model.Designation)
+                    </th>
+                    <th class="table-heading">
+                        @Html.DisplayNameFor(model => model.Department)
+                    </th>
+                    <th class="table-heading">
+                        @Html.DisplayNameFor(model => model.Salary)
+                    </th>
+                    <th class="table-heading">
+                        @Html.DisplayNameFor(model => model.Role)
+                    </th>
+                    <th class="table-heading">
+                        @Html.DisplayNameFor(model => model.Password)
+                    </th>
+                    <th class="table-heading">
+                        @Html.DisplayNameFor(model => model.IsActive)
+                    </th>
+                    <th class="table-heading">
+                        @Html.DisplayNameFor(model => model.CreatedAt)
+                    </th>
+                    <th class="table-heading">Actions</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td class="table-value">
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td class="table-value">
+                            @Html.DisplayFor(modelItem => item.Email)
+                        </td>
+                        <td class="table-value">
+                            @Html.DisplayFor(modelItem => item.Gender)
+                        </td>
+                        <td class="table-value">
+                            @Html.DisplayFor(modelItem => item.Age)
+                        </td>
+                        <td class="table-value">
+                            @Html.DisplayFor(modelItem => item.Address)
+                        </td>
+                        <td class="table-value">
+                            @Html.DisplayFor(modelItem => item.Phone)
+                        </td>
+                        <td class="table-value">
+                            @Html.DisplayFor(modelItem => item.Designation)
+                        </td>
+                        <td class="table-value">
+                            @Html.DisplayFor(modelItem => item.Department)
+                        </td>
+                        <td class="table-value">
+                            @Html.DisplayFor(modelItem => item.Salary)
+                        </td>
+                        <td class="table-value">
+                            @Html.DisplayFor(modelItem => item.Role)
+                        </td>
+                        <td class="table-value">
+                            @Html.DisplayFor(modelItem => item.Password)
+                        </td>
+                        <td class="table-value">
+                            @Html.DisplayFor(modelItem => item.IsActive)
+                        </td>
+                        <td class="table-value">
+                            @Html.DisplayFor(modelItem => item.CreatedAt)
+                        </td>
+                        <td class="table-value">
+                            <i class="fa fa-edit" style="cursor:pointer;" title="Edit" onclick="location.href='@Url.Action("Edit", "Home", new { id = item.Id })'"></i>
+                            <i class="fa fa-info-circle" style="cursor:pointer; margin: 0 10px;" title="Details" onclick="location.href='@Url.Action("Details", "Home", new { id = item.Id })'"></i>
+                            <i class="fa fa-trash" style="cursor:pointer;" title="Delete" onclick="location.href='@Url.Action("Delete", "Home", new { id = item.Id })'"></i>
+                        </td>
+
+                    </tr>
+                }
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,84 @@
+﻿@model EmployeeManagementSystem.Models.Employee
+
+@{
+    ViewBag.Title = "Edit My Details";
+}
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card shadow px-4 py-4">
+                <h3 class="mb-3">Edit My Details</h3>
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.HiddenFor(m => m.Id)
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger mb-3" })
+
+                    <div class="mb-3">
+                        <label for="Name" class="form-label">Name</label>
+                        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="mb-3">
+                        <label for="Email" class="form-label">Email</label>
+                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="mb-3">
+                        <label for="Phone" class="form-label">Phone</label>
+                        @Html.TextBoxFor(m => m.Phone, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Phone, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="mb-3">
+                        <label for="Address" class="form-label">Address</label>
+                        @Html.TextBoxFor(m => m.Address, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Address, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="mb-3">
+                        <label for="Gender" class="form-label">Gender</label>
+                        @Html.TextBoxFor(m => m.Gender, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Gender, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="mb-3">
+                        <label for="Age" class="form-label">Age</label>
+                        @Html.TextBoxFor(m => m.Age, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Age, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="mb-3">
+                        <label for="Designation" class="form-label">Designation</label>
+                        @Html.TextBoxFor(m => m.Designation, new { @class = "form-control", @readonly = "readonly" })
+                    </div>
+                    <div class="mb-3">
+                        <label for="Department" class="form-label">Department</label>
+                        @Html.TextBoxFor(m => m.Department, new { @class = "form-control", @readonly = "readonly" })
+                    </div>
+                    <div class="mb-3">
+                        <label for="Salary" class="form-label">Salary</label>
+                        @Html.TextBoxFor(m => m.Salary, new { @class = "form-control", @readonly = "readonly" })
+                    </div>
+                    <div class="mb-3">
+                        <label for="Role" class="form-label">Role</label>
+                        @Html.TextBoxFor(m => m.Role, new { @class = "form-control", @readonly = "readonly" })
+                    </div>
+                    <div class="mb-3">
+                        <label for="Password" class="form-label">Password <span class="text-muted" style="font-size:0.85em;">(Leave blank to keep current password)</span></label>
+                        @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Leave blank to keep current" })
+                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="mb-3">
+                        <label for="ConfirmPassword" class="form-label">Confirm Password</label>
+                        @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", placeholder = "Leave blank to keep current" })
+                        @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="text-end">
+                        <button type="submit" class="btn btn-primary px-4">Save</button>
+                        <a href="@Url.Action("Index", "User")" class="btn btn-secondary ms-2">Cancel</a>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

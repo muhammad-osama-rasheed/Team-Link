@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/Layout.css")" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+    <nav style="background-color: #fff; z-index: 1099; border-bottom: 1px solid rgba(35, 43, 93, 0.4) " class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+            <div class="navbar-header d-flex justify-content-center align-items-center">
+                <i class="material-icons" onclick="toggleSidebar()" style="font-size: 20px; color: #232B5D; cursor: pointer;" aria-label="Toggle sidebar">menu</i>
+                @Html.ActionLink("Team Link", "Index", "Home", new { area = "" }, new
+           {
+               @class = "navbar-brand",
+               style = "color: #232B5D; font-size: 18px; margin-left: 20px; font-family: Quicksand, sans-serif; font-weight: bold"
+           })
+            </div>
+            <div class="d-flex justify-content-center align-items-center">
+                <span style="margin-right: 5px; color: #232B5D; font-size: 14px; font-family: Quicksand, sans-serif; font-weight: 500 ">Hello, @Session["name"]</span>
+                <i class="material-icons" style="font-size: 15px; margin-right: 15px; color: #232B5D; cursor: pointer; " aria-label="Toggle sidebar">waving_hand</i>
+                <i class="material-icons"
+                   style="font-size: 18px; color: #232B5D; cursor: pointer;"
+                   onclick="logoutUser()">
+                    logout
+                </i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <a href="@Url.Action("Index", "Home")">Home</a>
+            <a href="@Url.Action("Index", "Application")">Applications</a>
+            <a href="@Url.Action("About", "Home")">About</a>
+            <a href="@Url.Action("Contact", "Home")">Contact</a>
+            <a href="@Url.Action("Index", "Department")">Departments</a>
+        </div>
+
+        <!-- Main Content -->
+        <div id="main-content">
+            <div class="content-area">
+                @RenderBody()
+            </div>
+            <footer>
+                <hr />
+                <div class="d-flex justify-content-between align-items-center">
+                    <span style="font-family: Quicksand, sans-serif;">&copy; @DateTime.Now.Year - Team Link</span>
+                    <div class="d-flex justify-content-center align-items-center">
+                        <i style="font-size: 20px; color: #232B5D; margin-right: 10px" class="fab fa-linkedin"></i>
+                        <i style="font-size: 20px; color: #232B5D; margin-right: 10px" class="fab fa-facebook"></i>
+                        <i style="font-size: 20px; color: #232B5D;" class="fab fa-github"></i>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script>
+
+         function logoutUser() {
+        window.location.replace('@Url.Action("Logout", "Home")');
+    }
+
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('closed');
+            document.getElementById('main-content').classList.toggle('full-width');
+        }
+
+        window.onload = function () {
+            if (window.innerWidth <= 768) {
+                document.getElementById('sidebar').classList.add('closed');
+                document.getElementById('main-content').classList.add('full-width');
+            }
+        };
+    </script>
+</body>
+
+</html>

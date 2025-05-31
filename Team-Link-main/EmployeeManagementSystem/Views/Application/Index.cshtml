@@ -1,0 +1,84 @@
+﻿@model IEnumerable<EmployeeManagementSystem.Models.EmployeeApplication>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@Html.Raw(TempData["DeleteEmpApplication"]);
+@Html.Raw(TempData["UpdateEmpApplication"]);
+
+<link href="~/Content/Application.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+<div class="heading-container">
+    <h5>All Applications</h5>
+</div>
+
+
+
+<div class="table-container">
+    <table class="table-main">
+        <thead>
+            <tr>
+                <th class="table-heading">
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th class="table-heading">
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+                <th class="table-heading">
+                    @Html.DisplayNameFor(model => model.EmployeeId)
+                </th>
+                <th class="table-heading">
+                    @Html.DisplayNameFor(model => model.Subject)
+                </th>
+                <th class="table-heading">
+                    @Html.DisplayNameFor(model => model.Message)
+                </th>
+                <th class="table-heading">
+                    @Html.DisplayNameFor(model => model.Reply)
+                </th>
+                <th class="table-heading">
+                    @Html.DisplayNameFor(model => model.Status)
+                </th>
+                <th class="table-heading">Actions</th>
+            </tr>
+        </thead>
+
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td class="table-value">
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td class="table-value">
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td class="table-value">
+                        @Html.DisplayFor(modelItem => item.EmployeeId)
+                    </td>
+                    <td class="table-value">
+                        @Html.DisplayFor(modelItem => item.Subject)
+                    </td>
+                    <td class="table-value">
+                        @Html.DisplayFor(modelItem => item.Message)
+                    </td>
+                    <td class="table-value">
+                        @Html.DisplayFor(modelItem => item.Reply)
+                    </td>
+                    <td class="table-value">
+                        @Html.DisplayFor(modelItem => item.Status)
+                    </td>
+                    <td class="table-value">
+                        <i class="fa fa-edit" style="cursor:pointer;" title="Edit" onclick="location.href='@Url.Action("Edit", "Application", new { id = item.Id })'"></i>
+                        <i class="fa fa-info-circle" style="cursor:pointer; margin: 0 10px;" title="Details" onclick="location.href='@Url.Action("Details", "Application", new { id = item.Id })'"></i>
+                        <i class="fa fa-trash" style="cursor:pointer;" title="Delete" onclick="location.href='@Url.Action("Delete", "Application", new { id = item.Id })'"></i>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

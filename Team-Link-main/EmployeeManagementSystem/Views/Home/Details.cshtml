@@ -1,0 +1,130 @@
+﻿@model EmployeeManagementSystem.Models.Employee
+
+@{
+    ViewBag.Title = "Employee Details";
+}
+
+<style>
+    body {
+        font-family: 'Quicksand', sans-serif;
+    }
+
+    .theme-bg {
+        background-color: #232B5D !important;
+    }
+
+    .btn-theme {
+        background-color: #232B5D;
+        color: #fff;
+        border: none;
+        transition: background-color 0.3s ease;
+    }
+
+        .btn-theme:hover {
+            background-color: #1a2047;
+            color: #fff;
+        }
+
+    .card-header h3 {
+        font-weight: 600;
+    }
+
+    .card {
+        border-radius: 12px;
+    }
+
+    .btn {
+        border-radius: 6px;
+    }
+
+    dl dt {
+        font-weight: 600;
+        color: #555;
+    }
+
+    dl dd {
+        color: #000;
+        margin-bottom: 12px;
+    }
+</style>
+
+<div class="container mt-5">
+    <div class="card shadow border-0">
+        <div class="card-header theme-bg text-white px-4 py-3">
+            <h4 class="mb-0">👤 Employee Details</h4>
+        </div>
+        <div class="card-body px-4 py-4">
+            <dl class="row">
+                <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Name)</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.Name)</dd>
+
+                <hr style="color: #ccc" />
+
+                <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Email)</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.Email)</dd>
+
+                <hr style="color: #ccc" />
+
+                <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Gender)</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.Gender)</dd>
+
+                <hr style="color: #ccc" />
+
+                <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Age)</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.Age)</dd>
+
+                <hr style="color: #ccc" />
+
+                <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Address)</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.Address)</dd>
+
+                <hr style="color: #ccc" />
+
+                <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Phone)</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.Phone)</dd>
+
+                <hr style="color: #ccc" />
+
+                <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Designation)</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.Designation)</dd>
+
+                <hr style="color: #ccc" />
+
+                <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Department)</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.Department)</dd>
+
+                <hr style="color: #ccc" />
+
+                <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Salary)</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.Salary)</dd>
+
+                <hr style="color: #ccc" />
+
+                <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Password)</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.Password)</dd>
+
+                <hr style="color: #ccc" />
+
+                <dt class="col-sm-3">@Html.DisplayNameFor(model => model.IsActive)</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.IsActive)</dd>
+
+                <hr style="color: #ccc" />
+
+                <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Role)</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.Role)</dd>
+
+                <hr style="color: #ccc" />
+
+                <dt class="col-sm-3">@Html.DisplayNameFor(model => model.CreatedAt)</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.CreatedAt)</dd>
+            </dl>
+
+        
+            <div class="text-center mt-4">
+                @Html.ActionLink("✏️ Edit", "Edit", new { id = Model.Id }, new { @class = "btn btn-theme px-4 py-2 me-2" })
+                @Html.ActionLink("↩️ Back", "Index", null, new { @class = "btn btn-outline-secondary px-4 py-2" })
+            </div>
+        </div>
+    </div>
+</div>
+

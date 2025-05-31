@@ -1,0 +1,58 @@
+﻿@model EmployeeManagementSystem.Models.Employee
+@{
+    ViewBag.Title = "Employee Profile";
+}
+
+@Html.Raw(TempData["LoginSuccess"])
+@Html.Raw(TempData["UpdateEmpMessage"])
+
+<link href="~/Content/Application.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card shadow profile-card px-4 py-4">
+                <div class="d-flex align-items-center mb-3">
+                    <img src="~/Content/user-avatar.png" alt="Avatar" class="rounded-circle me-3" style="width:64px;height:64px;">
+                    <div>
+                        <h3 class="mb-1">@Model.Name</h3>
+                        <p class="mb-0 text-muted">@Model.Designation, @Model.Department</p>
+                        <span class="badge bg-primary mt-1">@Model.Email</span>
+                    </div>
+                    <div class="ms-auto">
+                        <a href="@Url.Action("Edit", "User", new { id = Model.Id })" class="btn btn-outline-primary btn-sm">
+                            <i class="fa fa-edit"></i> Edit Details
+                        </a>
+                    </div>
+                </div>
+                <hr />
+                <div class="row text-muted mb-2">
+                    <div class="col-sm-6 mb-2">
+                        <strong>Phone:</strong> @Model.Phone
+                    </div>
+                    <div class="col-sm-6 mb-2">
+                        <strong>Age:</strong> @Model.Age
+                    </div>
+                    <div class="col-sm-6 mb-2">
+                        <strong>Address:</strong> @Model.Address
+                    </div>
+                    <div class="col-sm-6 mb-2">
+                        <strong>Gender:</strong> @Model.Gender
+                    </div>
+                    <div class="col-sm-6 mb-2">
+                        <strong>Salary:</strong> @String.Format("{0:N0}", Model.Salary)
+                    </div>
+                    <div class="col-sm-6 mb-2">
+                        <strong>Role:</strong> @Model.Role
+                    </div>
+                </div>
+                <div class="text-end mt-3">
+                    <a href="@Url.Action("Logout", "Home")" class="btn btn-outline-danger btn-sm">
+                        <i class="fa fa-sign-out-alt"></i> Logout
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
